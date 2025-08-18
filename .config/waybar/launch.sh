@@ -2,4 +2,7 @@
 
 pkill waybar
 
-waybar -c $HOME/.config/waybar/$1.jsonc -s $HOME/.config/waybar/$1.css > /dev/zero &
+THEME="${1:-default}"
+
+
+waybar -c $HOME/.config/waybar/$THEME.jsonc -s $HOME/.config/waybar/$THEME.css > /dev/zero &
