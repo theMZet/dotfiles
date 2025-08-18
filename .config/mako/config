@@ -1,25 +1,30 @@
 sort=-time
 layer=overlay
 background-color=#1e222a7f
-width=450
+width=400
 height=150
 border-size=0
 border-color=#14181d
 border-radius=10
-icons=0
+icons=1
 max-icon-size=64
 default-timeout=5000
 ignore-timeout=0
 font="HarmonyOS Sans SC" 16
 margin=12
 padding=12,20
+text-alignment=right
+format=<b>%a</b>\n%b
 
 [urgency=low]
 border-color=#cccccc
 
 [urgency=normal]
+border-size=1
 border-color=#99c0d0
+default-timeout=10000
 
 [urgency=critical]
+border-size=1
 border-color=#bf616a
 default-timeout=0
