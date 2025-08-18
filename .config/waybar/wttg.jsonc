@@ -1,0 +1,105 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "tray"
+    // "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "battery",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+    "*":[1,2,3,4]
+    },
+    "format-icons": {
+      "1": "󰣇 ",
+      "2": "󰖟 ",
+      "3": " ",
+      "4": " ",
+      "default": " "
+    }
+  },
+  "custom/power": {
+    "format": " ",
+    "on-click": "systemctl poweroff",
+    "tooltip": true,
+    "tooltip-format": "Poweroff"
+  },
+  "network": {
+    "format-wifi": "󰤨 ",
+    "format-ethernet": " ",
+    "tooltip-format": "󰅧 {bandwidthUpBytes}  󰅢 {bandwidthDownBytes}",
+    "format-linked": "󱘖 ",
+    "format-disconnected": " ",
+    "format-alt": "󰤨 ",
+    "interval": 1
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} ",
+    "format-charging": " 󱐋{capacity}%",
+	  "interval": 1,
+    "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+    "tooltip": true
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "󰖁 ",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [
+        " ",
+        " ",
+        " "
+      ]
+    },
+    "on-click-right": "kitty alsamixer",
+    "on-click": "pactl -- set-sink-mute 0 toggle",
+    "tooltip": true,
+    "tooltip-format": "{volume}%"
+  },
+  "clock": {
+    "interval": 1,
+    "timezone": "Europe/Warsaw",
+    "format": "{:%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "{:L%Y %m %d, %A}"
+  },
+  "tray": {
+    "icon-size": 17,
+    "spacing": 6
+  },
+  "bluetooth": {
+    "format": " ",
+    "format-connected": " ",
+    "format-connected-battery": " ",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  }
+}
+

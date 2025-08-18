@@ -1,0 +1,84 @@
+* {
+  font-family: 'Inter Variable', 'Symbols Nerd Font';
+  font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01"';
+  font-weight: 600;
+  font-size: 22px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.modules-left {
+  margin-left: 4px;
+}
+
+.modules-right {
+  margin-right: 3px;
+}
+
+#waybar {
+  background-image: linear-gradient(
+      to bottom,
+      #1e1e1e 0%,
+      #0f0f0f 100%
+    );
+  border: none;
+  border-bottom: 2px solid #d5d5d5;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+#tray {
+  margin-left: 4px;
+}
+
+#bluetooth,
+#network,
+#pulseaudio,
+#battery,
+#custom-power {
+  margin: 4px 3px;
+  padding: 0 1px;
+  padding-left: calc(5px + 1px);
+}
+
+#pulseaudio.muted {
+  color: #FF0000;
+  padding-top: 0;
+}
+
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#pulseaudio:hover,
+#custom-power:hover {
+  background-color: #3f3f3f;
+}
+
+#workspaces button:hover{
+  border-radius: 10px;
+  box-shadow: 0 -0.5px 0 0 #fff;
+  background-color: rgba(0,0,0,0);
+  text-shadow: inherit;
+  background: transparent;
+  border: 0;
+}
+
+#workspaces button.active {
+  border-radius: 10px;
+  background-color: #3f3f3f;
+}
+
+#workspaces button {
+  border: none;
+  font-weight: bold;
+  margin: 4px 3px;
+  padding: 0 2px;
+  padding-left: calc(5px + 2px);
+  background-color: rgba(0,0,0,0);
+}
+
+#window {
+  font-weight: 500;
+  font-style: italic;
+}
+
