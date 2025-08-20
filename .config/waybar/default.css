@@ -59,12 +59,21 @@
 #backlight,
 #custom-temperature,
 #memory,
+#custom-mic,
 #cpu{
   background-color: @bg;
   margin-top: 6px; /* 与屏幕顶部留出距离 */
   /*margin-bottom: 4px;*/
   padding: 4px 2px; /* 保持内部间距 */
   border-width: 0px;
+}
+
+#custom-mic {
+  color: #a6e3a1;
+}
+
+#custom-mic.muted {
+  color: #f38ba8;
 }
 
 #custpm-temperature.critical,

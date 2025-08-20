@@ -13,6 +13,7 @@
   "modules-right": [
     "network",
     "bluetooth",
+    "custom/mic",
     "pulseaudio",
     "backlight",
     "custom/temperature",
@@ -96,6 +97,13 @@
     "on-click": "pactl -- set-sink-mute 0 toggle",
     "tooltip": true,
     "tooltip-format": "Volume: {volume}%"
+  },
+  "custom/mic": {
+    "format": "{}",
+    "exec": "pactl get-source-mute alsa_input.usb-Generic_Realtek_Audio_USB_201701110001-00.analog-stereo | grep -q 'yes' && echo '{\"text\":\" \",\"class\":\"muted\"}' || echo '{\"text\":\" \",\"class\":\"unmuted\"}'",
+    "return-type": "json",
+    "on-click": "pactl set-source-mute alsa_input.usb-Generic_Realtek_Audio_USB_201701110001-00.analog-stereo toggle",
+    "interval": 2
   },
   "custom/temperature": {
     "exec": "sensors | awk '/^Package id 0:/ {print int($4)}'",
