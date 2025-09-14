@@ -32,6 +32,14 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"pyright",
+          "black",
+          "isort",
+          "rust_analyzer",
+          "stylua",
+          "gopls",
+          "vtsls",
+          "eslint",
+          "buf_lsp",
 				},
 			})
 		end,
@@ -54,10 +62,32 @@ return {
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.vtsls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.eslint.setup({
+        capabilities = capabilities
+      })
+      lspconfig.buf_lsp.setup({
+        capabilities = capabilities
+      })
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+          },
+        },
+      })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, {})
 		end,
 	},
 }
