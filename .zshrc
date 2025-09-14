@@ -105,3 +105,10 @@ source $ZSH/oh-my-zsh.sh
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+source /usr/share/nvm/init-nvm.sh
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/mz/.dart-cli-completion/zsh-config.zsh ]] && . /home/mz/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
