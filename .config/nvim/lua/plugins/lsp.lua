@@ -6,6 +6,11 @@ return {
 	--		end,
 	--	},
 	{
+		"mrcjkb/rustaceanvim",
+		version = "^6", -- Recommended
+		lazy = false, -- This plugin is already lazy
+	},
+	{
 		"mason-org/mason.nvim",
 		opts = {
 			ui = {
@@ -32,14 +37,16 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"pyright",
-          "black",
-          "isort",
-          "rust_analyzer",
-          "stylua",
-          "gopls",
-          "vtsls",
-          "eslint",
-          "buf_lsp",
+					"black",
+					"isort",
+					"rust_analyzer",
+					"stylua",
+					"gopls",
+					"vtsls",
+					"eslint",
+					"buf_lsp",
+					"asm_lsp",
+					"ast_grep",
 				},
 			})
 		end,
@@ -53,36 +60,50 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
+			lspconfig.ast_grep.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.clangd.setup({
+				filetypes = { "c", "c++" },
+				capabilities = capabilities,
+			})
+			lspconfig.asm_lsp.setup({
+				filetypes = { "assembly" },
+				capabilities = capabilities,
+			})
 			lspconfig.lua_ls.setup({
+				filetypes = { "lua" },
 				capabilities = capabilities,
 			})
 			lspconfig.pyright.setup({
+				filetypes = { "python" },
 				capabilities = capabilities,
 			})
-			lspconfig.rust_analyzer.setup({
+			lspconfig.vtsls.setup({
+				filetypes = { "javascript", "typescript" },
 				capabilities = capabilities,
 			})
-      lspconfig.vtsls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.eslint.setup({
-        capabilities = capabilities
-      })
-      lspconfig.buf_lsp.setup({
-        capabilities = capabilities
-      })
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        settings = {
-          gopls = {
-            analyses = {
-              unusedparams = true,
-            },
-            staticcheck = true,
-            gofumpt = true,
-          },
-        },
-      })
+			lspconfig.eslint.setup({
+				filetypes = { "javascript", "typescript" },
+				capabilities = capabilities,
+			})
+			lspconfig.buf_ls.setup({
+				filetypes = { "protobuf" },
+				capabilities = capabilities,
+			})
+			lspconfig.gopls.setup({
+				filetypes = { "go" },
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						},
+						staticcheck = true,
+						gofumpt = true,
+					},
+				},
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
