@@ -19,7 +19,6 @@
     "custom/temperature",
     "battery",
     "clock",
-    "custom/lock",
     "custom/reboot",
     "custom/power"
   ],
@@ -39,31 +38,25 @@
       "default": ""
     }
   },
-  "custom/lock": {
-  "format": "<span color='#00FFFF'>  </span>",
-  "on-click": "exit",
-  "tooltip": true,
-  "tooltip-format": "Lock"
-  },
   "custom/reboot": {
-    "format": "<span color='#FFD700'>  </span>",
+    "format": "<span color='#FFFFFF'>  </span>",
     "on-click": "systemctl reboot",
     "tooltip": true,
     "tooltip-format": "Reboot"
   },
   "custom/power": {
-    "format": "<span color='#FF4040'>  </span>",
+    "format": "<span color='#FFFFFF'>  </span>",
     "on-click": "systemctl poweroff",
     "tooltip": true,
     "tooltip-format": "Poweroff"
   },
   "network": {
-    "format-wifi": "<span color='#00FFFF'> 󰤨 </span>{essid} ",
-    "format-ethernet": "<span color='#7FFF00'> </span>Wired ",
-    "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
-    "format-linked": "<span color='#FFA500'> 󱘖 </span>{ifname} (No IP) ",
+    "format-wifi": "<span color='#FFFFFF'> 󰤨 </span>{essid} ",
+    "format-ethernet": "<span color='#FFFFFF'> </span>Wired ",
+    "tooltip-format": "<span color='#FFFFFF'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
+    "format-linked": "<span color='#FFFFFF'> 󱘖 </span>{ifname} (No IP) ",
     "format-disconnected": "<span color='#FF4040'>  </span>Disconnected ",
-    "format-alt": "<span color='#00FFFF'> 󰤨 </span>{signalStrength}% ",
+    "format-alt": "<span color='#FFFFFF'> 󰤨 </span>{signalStrength}% ",
     "interval": 1
   },
   "battery": {
@@ -71,26 +64,26 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span color='#28CD41'> {icon} </span>{capacity}% ",
+    "format": "<span color='#FFFFFF'> {icon} </span>{capacity}% ",
     "format-charging": " 󱐋{capacity}%",
 	  "interval": 1,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
     "tooltip": true
   },
   "pulseaudio": {
-    "format": "<span color='#00FF7F'>{icon}</span>{volume}% ",
-    "format-muted": "<span color='#FF4040'> 󰖁 </span>0% ",
+    "format": "<span color='#FFFFFF'>{icon}</span>{volume}% ",
+    "format-muted": "<span color='#FFFFFF'> 󰖁 </span>0% ",
     "format-icons": {
-      "headphone": "<span color='#BF00FF'>  </span>",
-      "hands-free": "<span color='#BF00FF'>  </span>",
-      "headset": "<span color='#BF00FF'>  </span>",
-      "phone": "<span color='#00FFFF'>  </span>",
-      "portable": "<span color='#00FFFF'>  </span>",
-      "car": "<span color='#FFA500'>  </span>",
+      "headphone": "<span color='#FFFFFF'>  </span>",
+      "hands-free": "<span color='#FFFFFF'>  </span>",
+      "headset": "<span color='#FFFFFF'>  </span>",
+      "phone": "<span color='#FFFFFF'>  </span>",
+      "portable": "<span color='#FFFFFF'>  </span>",
+      "car": "<span color='#FFFFFF'>  </span>",
       "default": [
-        "<span color='#808080'>  </span>",
-        "<span color='#FFFF66'>  </span>",
-        "<span color='#00FF7F'>  </span>"
+        "<span color='#FFFFFF'>  </span>",
+        "<span color='#FFFFFF'>  </span>",
+        "<span color='#FFFFFF'>  </span>"
       ]
     },
     "on-click-right": "kitty alsamixer",
@@ -107,7 +100,7 @@
   },
   "custom/temperature": {
     "exec": "sensors | awk '/^Package id 0:/ {print int($4)}'",
-    "format": "<span color='#FFA500'> </span>{}°C ",
+    "format": "<span color='#FFFFFF'> </span>{}°C ",
     "interval": 5,
     "tooltip": true,
     "tooltip-format": "CPU temp: {}°C"
@@ -124,7 +117,7 @@
   "clock": {
     "interval": 1,
     "timezone": "Europe/Warsaw",
-    "format": "<span color='#BF00FF'>  </span>{:%H:%M} ",
+    "format": "<span color='#FFFFFF'>  </span>{:%H:%M} ",
     "tooltip": true,
     "tooltip-format": "{:L%Y %m %d, %A}"
   },
@@ -134,20 +127,20 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "<span color='#FFD700'>{icon}</span>{percent}% ",
+    "format": "<span color='#FFFFFF'>{icon}</span>{percent}% ",
     "tooltip": true,
     "tooltip-format": "Brightness: {percent}%",
     "format-icons": [
-      "<span color='#696969'> 󰃞 </span>",  // 0 - 24
-      "<span color='#A9A9A9'> 󰃟 </span>",  // 25 - 49
-      "<span color='#FFFF66'> 󰃝 </span>",  // 50 - 74
-      "<span color='#FFD700'> 󰃠 </span>"   // 75+
+      "<span color='#FFFFFF'> 󰃞 </span>",  // 0 - 24
+      "<span color='#FFFFFF'> 󰃟 </span>",  // 25 - 49
+      "<span color='#FFFFFF'> 󰃝 </span>",  // 50 - 74
+      "<span color='#FFFFFF'> 󰃠 </span>"   // 75+
     ]
   },
   "bluetooth": {
-    "format": "<span color='#00BFFF'>  </span>{status} ",
-    "format-connected": "<span color='#00BFFF'>  </span>{device_alias} ",
-    "format-connected-battery": "<span color='#00BFFF'>  </span>{device_alias}{device_battery_percentage}% ",
+    "format": "<span color='#FFFFFF'>  </span>{status} ",
+    "format-connected": "<span color='#FFFFFF'>  </span>{device_alias} ",
+    "format-connected-battery": "<span color='#FFFFFF'>  </span>{device_alias}{device_battery_percentage}% ",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
