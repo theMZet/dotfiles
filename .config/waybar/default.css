@@ -42,7 +42,7 @@
 }
 
 #network,
-#custom-lock{
+#custom-reboot{
   background-color: @bg;
   margin-top: 6px; /* 与屏幕顶部留出距离 */
   margin-left: 6px;
