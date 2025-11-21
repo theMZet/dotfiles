@@ -39,7 +39,6 @@ return {
 					"pyright",
 					"black",
 					"isort",
-					"rust_analyzer",
 					"stylua",
 					"gopls",
 					"vtsls",
@@ -47,6 +46,7 @@ return {
 					"buf_lsp",
 					"asm_lsp",
 					"ast_grep",
+          "intelephense",
 				},
 			})
 		end,
@@ -63,6 +63,10 @@ return {
 			lspconfig.ast_grep.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.intelephense.setup({
+        filetypes = { "php" },
+        capabilities = capabilities,
+      })
 			lspconfig.clangd.setup({
 				filetypes = { "c", "c++" },
 				capabilities = capabilities,
