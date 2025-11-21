@@ -112,3 +112,5 @@ source /usr/share/nvm/init-nvm.sh
 [[ -f /home/mz/.dart-cli-completion/zsh-config.zsh ]] && . /home/mz/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+export PATH="/home/mz/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/mz/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
