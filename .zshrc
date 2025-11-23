@@ -113,4 +113,5 @@ source /usr/share/nvm/init-nvm.sh
 ## [/Completion]
 
 export PATH="/home/mz/.config/herd-lite/bin:$PATH"
+export PATH="/home/mz/.cargo/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/mz/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
